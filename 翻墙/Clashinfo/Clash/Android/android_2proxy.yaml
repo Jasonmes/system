@@ -1,0 +1,25 @@
+proxies:
+  - name: "MyProxy1"
+    type: socks5
+    server: 185.191.144.111
+    port: 59101
+    username: wow336
+    password: wow336123
+
+  - name: "MyProxy2"
+    type: socks5
+    server: pr.ip2world.com
+    port: 6001
+    username: jasonmes-zone-resi-region-fr-st-hautsdefrance-city-paris
+    password: abcd1234
+
+proxy-groups:
+  - name: "ProxyChain"
+    type: relay
+    proxies:
+      - "MyProxy1"
+      - "MyProxy2"
+
+rules:
+  - MATCH,ProxyChain
+

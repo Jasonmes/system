@@ -1,0 +1,38 @@
+
+第一步先改为阿里的源：
+
+
+
+echo "deb http://mirrors.aliyun.com/kali kali-rolling main non-free contrib" > /etc / apt / sources.listecho
+"deb-src http://mirrors.aliyun.com/kali kali-rolling main non-free contrib" >> / etc / apt / sources.listecho
+"deb http://mirrors.aliyun.com/kali-security kali-rolling/updates main contrib non-free" >> / etc / apt / sources.list
+
+第二步骤
+
+rm - rf / var / lib / apt / lists / *
+
+rm - rf / var / lib / apt / lists / partial / *
+
+apt - get
+update
+
+echo "deb http://mirrors.aliyun.com/ubuntu/ trusty main restricted universe multiverse" >> /etc/apt/sources.list
+
+echo "deb http://mirrors.aliyun.com/ubuntu/ trusty-security main restricted universe multiverse" >> /etc/apt/sources.list
+
+echo "deb http://mirrors.aliyun.com/ubuntu/ trusty-updates main restricted universe multiverse" >> /etc/apt/sources.list
+
+echo "deb http://mirrors.aliyun.com/ubuntu/ trusty-proposed main restricted universe multiverse" >> /etc/apt/sources.list
+
+echo "deb http://mirrors.aliyun.com/ubuntu/ trusty-backports main restricted universe multiverse" >> /etc/apt/sources.list
+
+echo "deb-src http://mirrors.aliyun.com/ubuntu/ trusty main restricted universe multiverse" >> /etc/apt/sources.list
+
+echo "deb-src http://mirrors.aliyun.com/ubuntu/ trusty-security main restricted universe multiverse" >> /etc/apt/sources.list
+
+echo "deb-src http://mirrors.aliyun.com/ubuntu/ trusty-updates main restricted universe multiverse" >> /etc/apt/sources.list
+
+echo "deb-src http://mirrors.aliyun.com/ubuntu/ trusty-proposed main restricted universe multiverse" >> /etc/apt/sources.list
+
+echo "deb-src http://mirrors.aliyun.com/ubuntu/ trusty-backports main restricted universe multiverse" >> /etc/apt/sources.list
+

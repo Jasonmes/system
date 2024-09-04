@@ -1,0 +1,24 @@
+conda创建环境速度慢解决办法
+
+Andrew Noah 2020-06-17 00:06:36  1053  收藏 4
+分类专栏： 程序环境解决方法汇总 文章标签： anaconda
+版权
+更换国内源
+
+conda config --add channels https://mirrors.ustc.edu.cn/anaconda/pkgs/main/
+conda config --add channels https://mirrors.ustc.edu.cn/anaconda/pkgs/free/
+conda config --add channels https://mirrors.ustc.edu.cn/anaconda/cloud/conda-forge/
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/
+conda config --set show_channel_urls yes
+1
+2
+3
+4
+5
+6
+如果还不行就试试下边的命令
+
+conda update conda
+1
+完美解决

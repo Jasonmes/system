@@ -1,0 +1,32 @@
+# 指定配置文件的版本
+version: "1"
+
+# 指定代理服务器设置
+proxies:
+  - name: "MyProxy"
+    type: socks5
+    server: 45.149.154.255
+    port: 50101
+    username: wow3360YHbo
+    password: whGN9UEzRf
+
+proxy-groups:
+  - name: "Proxy"
+    type: select
+    proxies:
+      - MyProxy
+
+rule-providers: {}
+
+rules:
+  - MATCH,Proxy
+
+# TUN模式设置
+tun:
+  enable: true
+  stack: system
+  device-url: dev://tun0
+  macOS-auto-route: true
+  macOS-auto-detect-interface: true
+
+

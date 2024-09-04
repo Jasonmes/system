@@ -1,0 +1,43 @@
+apt-fast install openssh-server
+
+
+
+SSH是否开启，端口是否监听
+检查端口是否监听
+$ ss -tnlp
+State     Recv-Q      Send-Q            Local Address:Port             Peer Address:Port
+从命令结果可以看到，SSH的监听端口(22)并没有
+
+检查sshd.service服务是否开启
+$ systemctl status sshd.service
+● sshd.service - OpenSSH Daemon
+   Loaded: loaded (/usr/lib/systemd/system/sshd.service; disabled; vendor preset: disabled)
+   Active: inactive (dead)
+sshd.service没有没有激活
+
+原因
+ssh服务没有启动，端口未处于监听状态
+
+解决
+$ systemctl start sshd.service
+$ systemctl status sshd.service
+● sshd.service - OpenSSH Daemon
+   Loaded: loaded (/usr/lib/systemd/system/sshd.service; disabled; vendor preset: disabled)
+   Active: active (running) since Sun 2018-04-22 23:51:43 CST; 6s ago
+ Main PID: 9429 (sshd)
+    Tasks: 1 (limit: 4915)
+   Memory: 1.7M
+   CGroup: /system.slice/sshd.service
+           └─9429 /usr/bin/sshd -D
+
+4月 22 23:51:43 xiaoliu-manjaro systemd[1]: Started OpenSSH Daemon.
+4月 22 23:51:43 xiaoliu-manjaro sshd[9429]: Server listening on 0.0.0.0 port 22.
+4月 22 23:51:43 xiaoliu-manjaro sshd[9429]: Server listening on :: port 22.
+$ ss -tmlp
+State      Recv-Q      Send-Q            Local Address:Port            Peer Address:Port                                                                                                    
+LISTEN     0           128                     0.0.0.0:ssh                  0.0.0.0:*         
+     skmem:(r0,rb87380,t0,tb16384,f0,w0,o0,bl0,d0)                                              
+LISTEN     0           128                        [::]:ssh                     [::]:*         
+     skmem:(r0,rb87380,t0,tb16384,f0,w0,o0,bl0,d0)
+$ ssh localhost
+Last login: Sun Apr 22 17:22:36 2018 from ::1

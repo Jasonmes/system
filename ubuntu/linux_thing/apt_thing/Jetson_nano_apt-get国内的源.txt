@@ -1,0 +1,36 @@
+使用apt-get安装时，会很慢，更换了国内的源后，就可以解决这个问题了。
+
+1. 备份sources.list文件
+
+sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak
+2. 打开sources.list文件
+
+sudo gedit /etc/apt/sources.list
+3. 删除原内容，添加下列内容
+
+#清华源
+deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ bionic-updates main restricted universe multiverse
+deb-src http://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ bionic-updates main restricted universe multiverse
+deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ bionic-security main restricted universe multiverse
+deb-src http://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ bionic-security main restricted universe multiverse
+deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ bionic-backports main restricted universe multiverse
+deb-src http://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ bionic-backports main restricted universe multiverse
+deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ bionic main universe restricted
+deb-src http://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ bionic main universe restricted
+#中科大源
+deb http://mirrors.ustc.edu.cn/ubuntu-ports/ bionic-updates main restricted universe multiverse 
+deb-src http://mirrors.ustc.edu.cn/ubuntu-ports/ bionic-updates main restricted universe multiverse 
+deb http://mirrors.ustc.edu.cn/ubuntu-ports/ bionic-security main restricted universe multiverse 
+deb-src http://mirrors.ustc.edu.cn/ubuntu-ports/ bionic-security main restricted universe multiverse 
+deb http://mirrors.ustc.edu.cn/ubuntu-ports/ bionic-backports main restricted universe multiverse 
+deb-src http://mirrors.ustc.edu.cn/ubuntu-ports/ bionic-backports main restricted universe multiverse 
+deb http://mirrors.ustc.edu.cn/ubuntu-ports/ bionic main universe restricted 
+deb-src http://mirrors.ustc.edu.cn/ubuntu-ports/ bionic main universe restricted
+这两个源都可以用，我都试过，感觉中科大源速度更快。
+
+4. 更新
+
+保存sources.list文件后需要更新apt-get。
+
+sudo apt-get update
+更新完成后就可以正常使用了。

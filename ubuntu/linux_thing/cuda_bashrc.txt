@@ -1,0 +1,21 @@
+ubuntu 添加cuda到bashrc环境变量
+
+农民小飞侠 2019-11-28 22:25:28  2743  收藏 3
+分类专栏： linux学习 ubuntu
+版权
+在使用下面命令的时候，会出现找不到该命令，但是cuda已经安装好了，这是因为cuda环境变量有问题，执行的命令为：
+
+nvcc -V
+需要添加的环境变量，我安装的是cuda-10，这里根据安装的cuda版本自行更改下面的配置, vim ~/.bashrc：
+
+export PATH=/usr/local/cuda-10.0/bin:$PATH
+export LD_LIBRARY_PATH=/usr/local/cuda-10.0/lib64:$LD_LIBRARY_PATH
+source ~/.bashrc 
+nvcc -V 
+我的输出为：
+
+zww@zww-HP-Z420-Workstation:~$ nvcc -V
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2018 NVIDIA Corporation
+Built on Sat_Aug_25_21:08:01_CDT_2018
+Cuda compilation tools, release 10.0, V10.0.130

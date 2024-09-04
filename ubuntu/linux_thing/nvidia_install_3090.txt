@@ -1,0 +1,29 @@
+    1  sudo passwd
+    2  su root
+    3  nvidia-smi
+    4  apt-get update
+    5  sudo apt-get update
+    6  pci
+    7  sudo update-pciids 
+    8  sudo apt-get update
+    9  ubuntu nvidia-drivers
+   10  ubuntu drivers-devices
+   11  drivers-devices
+   12  nvidia-smi
+   13  sudo apt-get remove purge nvidia*
+   14  sudo apt-get purge nvidia*
+   15  pci
+   16  ls pci
+   17  lspci
+   18  nvidia-detector
+   19  nvidia-smi
+   20  ubuntu-drivers devices
+   21  sudo apt-get install nvidia-driver-510
+   22  nvidia-smi
+   23  sudo apt update
+   24  reboot
+   25  nvidia-smi
+   26  su root
+   27  historyy
+   28  history
+

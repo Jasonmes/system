@@ -1,0 +1,8 @@
+LAMBDA_REPO=$(mktemp) && \
+wget -O${LAMBDA_REPO} https://lambdalabs.com/static/misc/lambda-stack-repo.deb && \
+dpkg -i ${LAMBDA_REPO} && rm -f ${LAMBDA_REPO} && \
+apt-get update && \
+apt-get --yes upgrade && \
+apt-get install --yes --no-install-recommends lambda-server && \
+apt-get install --yes --no-install-recommends nvidia-headless-455 && \
+apt-get install --yes --no-install-recommends lambda-stack-cuda

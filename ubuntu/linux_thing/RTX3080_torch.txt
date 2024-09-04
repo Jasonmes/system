@@ -1,0 +1,5 @@
+
+
+GeForce RTX 3080 with CUDA capability sm_86 is not compatible with the current PyTorch installation.
+The current PyTorch install supports CUDA capabilities sm_37 sm_50 sm_60 sm_70 sm_75.
+If you want to use the GeForce RTX 3080 GPU with PyTorch, please check the instructions at https://pytorch.org/get-started/locally/

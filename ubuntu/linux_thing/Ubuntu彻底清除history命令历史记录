@@ -1,0 +1,8 @@
+Ubuntu彻底清除history命令历史记录
+
+
+# 第一步： 删除 .bash_history 文件
+rm -rf ~/.bash_history
+
+# 第二步： 清空命令历史记录
+history -c

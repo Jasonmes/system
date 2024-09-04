@@ -1,0 +1,16 @@
+proxies:
+  - name: "MyProxy"
+    type: socks5
+    server: 141.11.32.134
+    port: 59101
+    username: wow336
+    password: wow336123
+
+proxy-groups:
+  - name: "Proxy"
+    type: select
+    proxies:
+      - "MyProxy"
+
+rules:
+  - MATCH,Proxy

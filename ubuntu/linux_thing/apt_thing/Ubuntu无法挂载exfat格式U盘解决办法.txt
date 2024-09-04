@@ -1,0 +1,13 @@
+提示错误为：
+mount: unknown filesystem type ‘exfat’
+
+原因分析：U盘属性为exfat类型，Ubuntu系统默认不能挂载exfat类型的U盘，要想挂载，需要先安装exfat磁盘格式工具。
+
+解决方法：
+sudo apt-get install exfat-utils
+或者sudo apt-get install exfat-fuse
+
+安装完成后重新拔插U盘即可正常使用。
+————————————————
+版权声明：本文为CSDN博主「瓜大菜菜子」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/administrator_ha/article/details/122229071

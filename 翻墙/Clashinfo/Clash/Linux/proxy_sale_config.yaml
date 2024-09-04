@@ -1,0 +1,32 @@
+# 指定配置文件的版本
+version: "1"
+
+# 指定代理服务器设置
+proxies:
+  - name: "France"
+    type: socks5
+    server: 185.191.144.217
+    port: 59101
+    username: wow336
+    password: wow336123
+
+proxy-groups:
+  - name: "Proxy"
+    type: select
+    proxies:
+      - France
+
+rule-providers: {}
+
+rules:
+  - MATCH,Proxy
+
+# TUN模式设置
+tun:
+  enable: true
+  stack: system
+  device-url: dev://tun0
+  macOS-auto-route: true
+  macOS-auto-detect-interface: true
+
+
